@@ -5,6 +5,7 @@ import random
 import webbrowser
 import pyautogui
 import pyperclip
+from CategorieGUI import *
 
 def sleepy():#sleep for 1second and few millisecond
     return time.sleep(1+random.uniform(0,1))
@@ -39,6 +40,8 @@ def deposephoto(val,i):
     
     pyautogui.typewrite('\n')
 trace=Announcenumber
+def CategorieGUI(categorie,Souscategorie):
+    if categorie==
 def deposite():
     #cliquer sur déposer
     global Announcenumber
@@ -83,6 +86,8 @@ def deposite():
     formx, formy = pyautogui.center(continuer)
     pyautogui.click(formx, formy)
     sleepy()
+    #Sous Categorie Proper part
+    categorieGUI(annonce['souscat'])
     # type Title
     pyautogui.press('tab')
     pyperclip.copy(annonce['title'])
