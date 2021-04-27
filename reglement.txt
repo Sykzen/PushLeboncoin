@@ -1,0 +1,2 @@
+-avoir chrome installé et sur C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s
+-nom des images correct sur le dossier de base des images
