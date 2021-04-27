@@ -1,5 +1,7 @@
 # PushLeboncoin
 Script to Push Product from Excel ---> Ecommerce Website (Leboncoin in this case)
+<img src="https://img.icons8.com/color/48/000000/python.png"/>
+![Python](https://img.shields.io/badge/-Python-yellow)
 ## Démo
 
 
@@ -28,8 +30,16 @@ https://user-images.githubusercontent.com/55047001/116310625-8efa9d80-a7aa-11eb-
 - Script break when your connexion do
 - AnnounceNumber variable alow you to push from ligne AnnounceNumber to the end if AnnounceNumber=5 script gonna push from line 5(excel) to the end
 - To avoid click by Image detection Use getCordinate.py and set the script depend on your computer and leboncoin update ( need to change every pyautogui.LocateOnscreen)
-- if you think to use this 4th methode think of publicity who will change you Cordinate target (or just use ADblock)
+- if you think to use this 4th methode think how u will handle publicity who will change you Cordinate target (or just use ADblock)
 
 
 ## Author(s)/Contributor(s)
 - [Sykzen](https://github.com/Sykzen) 
+
+
+##KeyWord
+- Publier automatiquement sur leboncoin
+- Bot Leboncoin
+- API Leboncoin
+- Ecommerce API Website
+- API Leboncoin
