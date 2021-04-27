@@ -3,38 +3,30 @@ import time
 from extract import *
 import random
 import webbrowser
-try:
-    import pyautogui
-    import pyperclip
-except:
-    try:
-        os.system('pip install pyautogui')
-        os.system('pip install pyperclip')
-        import pyautogui
-        import pyperclip
-    except:
-        os.system('python -m pip install pyautogui')
-        os.system('python -m pip install pyperclip')
-        import pyautogui
-        import pyperclip
-            
-def sleepy():
+import pyautogui
+import pyperclip
+
+def sleepy():#sleep for 1second and few millisecond
     return time.sleep(1+random.uniform(0,1))
 
 
 webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open("leboncoin.fr")
 
 
-sleepy()
-sleepy()
 nbproduit=len(product)
 print("je vais déposer "+str(nbproduit)+" produit")
 
 Announcenumber=0
-
-depose= pyautogui.locateOnScreen('img/depose.png')
-formx, formy = pyautogui.center(depose)
-pyautogui.click(formx, formy)
+            
+                    
+pyautogui.hotkey("alt", "esc")
+sleepy()
+sleepy()
+pyautogui.press('tab')
+pyautogui.press('tab')
+pyautogui.typewrite('\n')
+        
+        
 def deposephoto(val,i):
  
         
@@ -63,58 +55,56 @@ def deposite():
     pyautogui.typewrite('\n')
     
     sleepy()
-    
+    # Click on Choisissez une autre catégorie
     choisir= pyautogui.locateOnScreen('img/choisir.png')
     formx, formy = pyautogui.center(choisir)
     pyautogui.click(formx, formy)
     
     sleepy()
-    
-    serviceplus= pyautogui.locateOnScreen('img/serviceplus.png')
-    formx, formy = pyautogui.center(serviceplus)
+    # Click on Categorie
+    categorie= pyautogui.locateOnScreen("img/Categorie/"+annonce['cat']+".png")
+    formx, formy = pyautogui.center(categorie)
     pyautogui.click(formx, formy)
     
     sleepy()
+    # Click on Sous Categorie
     try:
-        prestationservice= pyautogui.locateOnScreen('img/prestationservice.png')
-        formx, formy = pyautogui.center(prestationservice)
+        souscategorie= pyautogui.locateOnScreen('img/SousCategorie/'+annonce['souscat']+'.png')
+        formx, formy = pyautogui.center(souscategorie)
         pyautogui.click(formx, formy)
     except:
-        prestationservice2= pyautogui.locateOnScreen('img/prestationservice2.png')
-        formx, formy = pyautogui.center(prestationservice2)
+        souscategorie2= pyautogui.locateOnScreen('img/SousCategorie/'+annonce['souscat']+'2.png')
+        formx, formy = pyautogui.center(souscategorie2)
         pyautogui.click(formx, formy)
     
     sleepy()
-    
+    # Click on Continuer
     continuer= pyautogui.locateOnScreen('img/continuer.png')
     formx, formy = pyautogui.center(continuer)
     pyautogui.click(formx, formy)
     sleepy()
-    
+    # type Title
     pyautogui.press('tab')
     pyperclip.copy(annonce['title'])
     pyautogui.hotkey("ctrl", "v")
-    
+    # type Description
     pyautogui.press('tab')
     pyautogui.hotkey("ctrl", "a")
     pyautogui.press('del')
     pyperclip.copy(annonce['desc'])
     pyautogui.hotkey("ctrl", "v")
-    
     pyautogui.press('tab')
     pyautogui.press('tab')
     pyautogui.typewrite('\n')
-    
+    # type Price
     pyautogui.press('tab')
     pyperclip.copy(annonce['price'])
     pyautogui.hotkey("ctrl", "v")
-    
     pyautogui.press('tab')
     pyautogui.press('tab')
     pyautogui.typewrite('\n')
-    
-    
     sleepy()
+    # Post Image
     if Announcenumber==trace:
         for i in range(3):
             try:
@@ -131,13 +121,15 @@ def deposite():
     pyautogui.press('tab')
     pyautogui.typewrite('\n')
     sleepy()
+    # type Zone
     pyautogui.press('tab')
-    
     pyperclip.copy(annonce['zone'])
     pyautogui.hotkey("ctrl", "v")
     pyautogui.typewrite('\n')
+    sleepy()
     pyautogui.typewrite('\n')
     sleepy()
+    # type Continue
     for i in range(5):
         pyautogui.press('tab')
     pyautogui.typewrite('\n')
@@ -154,7 +146,7 @@ def deposite():
     
 if __name__=="__main__":
  
-    while nbproduit!=0:
+    while (nbproduit-trace)!=0:
         print(" je vais déposer le produit N°: "+str(Announcenumber+1))
         deposite()
         nbproduit=nbproduit-1
