@@ -11,7 +11,7 @@ def sleepy():#sleep for 1second and few millisecond
     return time.sleep(1+random.uniform(0,1))
 
 
-webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open("leboncoin.fr")
+webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open("https://www.leboncoin.fr/deposer-une-annonce")
 
 
 nbproduit=len(product)
@@ -20,12 +20,10 @@ print("je vais déposer "+str(nbproduit)+" produit")
 Announcenumber=0
             
                     
-pyautogui.hotkey("alt", "esc")
+
 sleepy()
-sleepy()
-pyautogui.press('tab')
-pyautogui.press('tab')
-pyautogui.typewrite('\n')
+
+
         
         
 def deposephoto(val,i):
