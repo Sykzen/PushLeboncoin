@@ -40,8 +40,7 @@ def deposephoto(val,i):
     
     pyautogui.typewrite('\n')
 trace=Announcenumber
-def CategorieGUI(categorie,Souscategorie):
-    if categorie==
+
 def deposite():
     #cliquer sur déposer
     global Announcenumber
